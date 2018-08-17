@@ -3,6 +3,7 @@
 
 // dependencies
 const express = require('express');
+const bodyParser = require('body-parser');
 const NodeCache = require('node-cache');
 const opn = require('opn');
 
@@ -12,6 +13,10 @@ require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 4000;
 const connectionString = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/postgres';
+
+// Parse POST data
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // require pg-promise
 const pgp = require('pg-promise')({
@@ -38,6 +43,7 @@ app.use(express.static(`${__dirname}/public`));
 // import routes
 app.use('/sql', require('./routes/sql'));
 app.use('/tiles', require('./routes/tiles'));
+app.use('/settings', require('./routes/settings'));
 
 // start the server
 app.listen(port);

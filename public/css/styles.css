@@ -143,3 +143,40 @@ input[type=checkbox] {
 .cm-s-shadowfox.CodeMirror {
     background: #1b1f24;
 }
+
+/* Modal */
+.pp-modal-backdrop {
+  position: absolute;
+  z-index: 100;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -50px;
+}
+.pp-modal {
+  height: auto;
+  width: 75%;
+  background-color: #ffffff;
+  border-radius: 6px;
+}
+.pp-modal-close {
+  float: right;
+  padding: 0 15px;
+  font-size: 25px;
+  color: #000000;
+  cursor: pointer;
+}
+.pp-modal-inner {
+  padding: 15px;
+}
+
+/* Connection creation */
+.submit-connection {
+  margin-left: 10px;
+}
+.create-connection-buttons {
+  margin-bottom: 45px;
+}

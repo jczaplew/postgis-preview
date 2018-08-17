@@ -186,6 +186,7 @@ class App extends React.Component {
 
     return (
       <div className="react-root">
+        <ConnectionModal/>
         <div className="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div className="container-fluid">
             <div className="navbar-header">
